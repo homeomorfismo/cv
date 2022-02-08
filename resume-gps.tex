@@ -1,0 +1,251 @@
+
+
+\documentclass[12pt,letterpaper]{report}
+
+\usepackage[T1]{fontenc} % output T1 font encoding (8-bit) for accented characters as single glyph
+\usepackage[strict,autostyle]{csquotes} % smart and nestable quote marks
+\usepackage[USenglish]{babel} % regionalize hyphens, quote marks, etc automatically
+\usepackage{microtype}% improve text appearance with kerning, etc
+\usepackage{datetime} % enable formatting of date output
+\usepackage{tabto}    % make nice tabbing
+\usepackage{hyperref} % enable hyperlinks and pdf metadata
+\usepackage{geometry} % manually set page margins
+\usepackage{enumitem} % enumerate with [resume] option
+\usepackage{titlesec} % allow custom section fonts
+\usepackage{setspace} % custom line spacing
+
+% what is your name?
+\newcommand{\myname}{Gabriel Esteban Pinochet Soto}
+
+% select default typefaces
+\usepackage{ebgaramond} % document's serif typeface
+\usepackage{helvet}     % document's sans serif typeface
+
+% how far to tab for list items with left-aligned date: different fonts need different widths
+\newcommand{\listtabwidth}{1.7cm}
+
+% define font to use as document's title
+\newcommand{\namefont}[1]{{\normalfont\bfseries\Huge{#1}}}
+
+% set section heading fonts and before/after spacing
+\SetTracking{encoding=*, family=\sfdefault}{30} % increase sans serif headings tracking
+\titleformat{\section}{\lsstyle\sffamily\small\bfseries\uppercase}{}{}{}{}
+\titlespacing{\section}{0pt}{30pt plus 4pt minus 4pt}{8pt plus 2pt minus 2pt}
+
+% set subsection heading fonts and before/after spacing
+\titleformat{\subsection}{\lsstyle\sffamily\footnotesize\bfseries}{}{}{}{}
+\titlespacing{\subsection}{0pt}{16pt plus 4pt minus 4pt}{4pt plus 2pt minus 2pt}
+
+% set page margins (assumes letter paper)
+\geometry{body={6.5in, 9.0in},
+    left=1.0in,
+    top=1.0in}
+
+% prevent paragraph indentation
+\setlength\parindent{0em}
+
+% set line spacing
+\setstretch{0.9}
+
+% define space between list items
+\newcommand{\listitemspace}{0.25em}
+
+% make unordered lists without bullets and use compact spacing
+\renewenvironment{itemize}
+{\begin{list}{}{\setlength{\leftmargin}{0em}
+                \setlength{\parskip}{0em}
+                \setlength{\itemsep}{\listitemspace}
+                \setlength{\parsep}{\listitemspace}}}
+{\end{list}}
+
+% make tabbed lists so content is left-aligned next to years
+\TabPositions{\listtabwidth}
+\newlist{tablist}{description}{3}
+\setlist[tablist]{leftmargin=\listtabwidth,
+    labelindent=0em,
+    topsep=0em,
+    partopsep=0em,
+    itemsep=\listitemspace,
+    parsep=\listitemspace,
+    font=\normalfont}
+
+% print only the month and year when using \today
+\newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
+
+% define hyperlink appearance and metadata for pdf properties
+\hypersetup{
+    colorlinks  = true,
+    urlcolor    = black,
+    citecolor   = black,
+    linkcolor   = black,
+    pdfauthor   = {\myname},
+    pdfkeywords = {mathematics, numerical analysis, functional analysis},
+    pdftitle    = {\myname: Curriculum Vitae},
+    pdfsubject  = {Curriculum Vitae},
+    pdfpagemode = UseNone
+}
+
+\begin{document}
+    \raggedright{}
+
+    % display your name as the document title
+    \namefont{\myname}
+
+    % affiliation and contact info blocks
+    \vspace{1em}
+    \begin{minipage}[t]{0.55\textwidth}
+        {\bf Nationality:} Chilean.\\
+        %{\bf Date of Birth:} September 26, 1997.\\
+        {\bf Languages:} Spanish (native), \\English (intermediate), French (basic). \\
+    \end{minipage}
+    \begin{minipage}[t]{0.4\textwidth}
+        {\bf Email:}\\
+        \href{mailto:gpin2@pdx.edu}{gpin2@pdx.edu}\\
+        \href{mailto:gpinochetsoto@gmail.com}{gpinochetsoto@gmail.com}\\
+        %{\bf Mobile number:} +56 9 8342 1643
+    \end{minipage}
+
+
+    \section*{Career Objective}
+
+    Incipient mathematician.
+    % Seeking to do research and teach.
+    Interested in numerical methods and applied mathematics, specifically on the theoretical fundament of these.
+    Principal interest are Linear Functional Analysis, Partial Differential Equations, and Finite Element Methods.
+    % Currently working as a Graduate Teaching Assistant at PSU.
+
+    \subsection*{Skills}
+
+    Critical thinking and mathematical reasoning.\\
+    Familiarized with C, MATLAB, Python, NGSolve.\\
+    Self-motivated student, enthusiastic, team worker.\\
+    % Empathic, dedicated, creative.
+    \section*{Interest Research Areas}
+
+    Analysis and implementation of the Finite Element Method. Developing numerical methods for differential equations. 
+    
+    \section*{Education}
+
+    \begin{tablist}
+        \item[M.S.]  \tab Pure Mathematics, Pontificia Universidad Cat\'olica de Valpara\'iso, 2021.
+        \item[B.S.]  \tab Pure Mathematics, Pontificia Universidad Cat\'olica de Valpara\'iso, 2019.
+        %\item[Ph.D.] \tab Mathematical Sciences, Portland State University, 2021.
+    \end{tablist}
+
+    \subsection*{Currently Studying}
+
+    \begin{tablist}
+        
+        \item[Ph.D.] \tab Mathematical Sciences, Portland State University. Started in September 2021.
+        %\item[M.S.]  \tab Pure Mathematics, Pontificia Universidad Cat\'olica de Valpara\'iso. Started in March 2021.
+    \end{tablist}
+
+    \subsection*{Complementary education and minicourse attendance}
+
+    \begin{tablist}
+
+        \item[2019] \tab \emph{French Latin-American Conference on New Trends in Applied Mathematics.} Center for Mathematical Modeling, Universidad de Chile. Nov 5--Nov 8.
+
+        \item[2019] \tab \emph{Functional Analysis,} taught by Claudio Landim. Instituto Nacional de Matem\'atica Pura e Aplicada. Jan 7--Mar 1.
+        
+        \item[2018] \tab \emph{Second NGSolve User Meeting,} orginized by Joachim Schöberl, Christoph Lehrenfeld
+        Christopher Lackner, and Christoph Wintersteiger. Göttingen. Jul 4--Jul 6. 
+
+        \item[2018] \tab \emph{Introduction to elliptical functions,} taught by Victor Moll. Pontificia Universidad Cat\'olica de Valpara\'iso. Jul 24--Aug 24.
+        
+        \item[2017] \tab \emph{Fast and smooth simulation of space-time problems,} taught by Maciej Paszynski. Pontificia Universidad Cat\'olica de Valpara\'iso. Jul 24--Jul 28.
+        
+        \item[2017] \tab \emph{Coding the FEM II,} taught by David Pardo and \'Angel Rodr\'iguez-Rozas. Pontificia Universidad Cat\'olica de Valpara\'iso. Jan 15--Jan 20. 
+
+        \item[2016]  \tab \emph{Training program for teaching assistants}. Pontificia Universidad Cat\'olica de Valpara\'iso.\\ Sep 26--Oct 31.
+        
+        \item[2013--15] \tab \emph{Educational Program for Academic Talents BETA}. Pontificia Universidad Cat\'olica de Valpara\'iso.
+
+    \end{tablist}
+
+    \section*{Publications}
+
+    \begin{tablist}
+
+    \item[2021] \tab Aralar Erdozain, Ignacio Muga, Victor Péron, Gabriel Pinochet. Semi-analytical solutions for the problem of the electric potential set in a borehole with a highly conductive casing. \href{https://hal.archives-ouvertes.fr/hal-03373028}{⟨hal-03373028⟩}. \emph{Preprint. Submitted to International Journal on Geomathematics.}
+
+    \end{tablist}
+
+    \section*{Achievements}
+
+    \begin{tablist}
+
+        \item[2021] \tab Dean's Oregon Sports Lottery Graduate Scholarship, Portland State University, Fall Term. 10,000 USD, for academic year of 2021-2022.
+
+        \item[2021] \tab Departmental Scholarship, Portland State University, Fall Term - Spring Term. 2,000 USD per term, for the academic year of 2021-2022.
+
+        \item[2017] \tab Best academic performance for newcomers in 2016, Pontificia Universidad Cat\'olica de Valpara\'iso.
+
+        \item[2016] \tab Pontificia Universidad Cat\'olica de Valpara\'iso Scholarship, Pontificia Universidad Cat\'olica de Valpara\'iso. Four-year full tuition remission scholarship awarded for academic excellence in high school and good performance on the national University Selection Test (Prueba de Selecci\'on Universitaria).
+
+    \end{tablist}
+
+    \section*{Talks}
+
+    \begin{tablist}
+
+        \item[2020] \tab \emph{Conservative Numerical Methods for the resolutions of ODEs.} Coloquio de Licenciatura, Instituto de Matem\'aticas, Pontificia Universidad Cat\'olica de Valpara\'iso. Valpara\'iso, Chile. 3 Sep.
+         
+        \item[2020] \tab \emph{Conservative Numerical Methods for the resolutions of ODEs.} Seminario de Estudiantes, Universidad de Chile. Santiago, Chile. 29 May.
+
+    	\item[2019] \tab \emph{Different numerical methods for the resolution of positive ODEs with linear invariants.} Generaci\'on de Conocimiento, Pontificia Universidad Cat\'olica de Valpara\'iso. Valpara\'iso, Chile. Oct 10.
+    
+    	\item[2019] \tab \emph{Introduction to Theory of Computation.} Coloquio de Licenciatura, Instituto de Matem\'aticas, Pontificia Universidad Cat\'olica de Valpara\'iso. Valpara\'iso, Chile. 23 May.
+    	
+    \end{tablist}
+
+
+
+    \section*{Teaching Experience}
+
+    \subsection*{Graduate Teaching Assistant}
+
+    \begin{tablist}
+
+        \item[2021] \tab \emph{Introduction to College Mathematics II}. Portland State University. Fall Term. 
+    
+    \end{tablist}
+
+    \subsection*{Teaching Assistant}
+
+    \begin{tablist}
+
+        \item[2020] \tab \emph{Functional Analysis}. Mathematics, Pontificia Universidad Cat\'olica de Valpara\'iso. 
+            
+        \item[2020] \tab \emph{Multivariable Calculus}. Civil Engineering, Pontificia Universidad Cat\'olica de Valpara\'iso. 
+            
+        \item[2020] \tab \emph{Integral Calculus}. Mechanical Engineering, Mining Engineering, Pontificia Universidad Cat\'olica de Valpara\'iso. 
+            
+        \item[2020] \tab \emph{Linear Algebra 2}. Mathematics, Pontificia Universidad Cat\'olica de Valpara\'iso.
+            
+        \item[2020] \tab \emph{Multivariable Calculus}. Physics, Pontificia Universidad Cat\'olica de Valpara\'iso. 
+            
+        \item[2020] \tab \emph{Multivariable Calculus}. Industrial chemestry, Pontificia Universidad Cat\'olica de Valpara\'iso. 
+        
+        \item[2019] \tab \emph{General Topology}. Mathematics, Pontificia Universidad Cat\'olica de Valpara\'iso. 
+            
+        \item[2019] \tab \emph{Measure theory}. Mathematics, Pontificia Universidad Cat\'olica de Valpara\'iso. 
+            
+        \item[2018] \tab \emph{C Programming}. Mathematics, Pontificia Universidad Cat\'olica de Valpara\'iso. 
+            
+        \item[2018] \tab \emph{Multivariable Calculus}. Chemical Engineering, Biochemical Engineering, Engineering in extractive metallurgy, Pontificia Universidad Cat\'olica de Valpara\'iso. 
+         
+        \item[2017] \tab \emph{Riddles and Number Series: Discovering the mathematics of everyday life}. Educational Program for Academic Talents BETA, Pontificia Universidad Cat\'olica de Valpara\'iso.
+
+        \item[2017] \tab \emph{C Programming}. Mathematics, Pontificia Universidad Cat\'olica de Valpara\'iso. 
+            
+        \item[2017] \tab \emph{Differential Calculus}. Engineering, Pontificia Universidad Cat\'olica de Valpara\'iso. 
+
+    \end{tablist}
+    % display today's date as Month Year after a vertical space below the end of the text
+    \begin{center}
+        \vfill
+        Updated \monthyeardate\today
+    \end{center}
+
+\end{document}
