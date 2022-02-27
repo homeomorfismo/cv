@@ -286,3 +286,5 @@ TSWLatexianTemp*
 #*Notes.bib
 
 \.github\workflows\build.yml
+./sop/*
+./sop
